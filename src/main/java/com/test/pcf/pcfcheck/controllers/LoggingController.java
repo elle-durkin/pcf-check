@@ -1,11 +1,13 @@
 package com.test.pcf.pcfcheck.controllers;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalTime;
 
 @RestController
+@Log4j2
 public class LoggingController {
     private String makeHTMLRow(String endpoint, String msg){
         String link="";
@@ -95,6 +97,18 @@ public class LoggingController {
         }
         System.out.println(msg);
         return "Wrote the following big message to System.out" + msg;
+    }
+
+    @RequestMapping("/exception")
+    public void exception(){
+        try {
+            NullPointerException nullPointer = new NullPointerException();
+            throw nullPointer;
+        }
+        catch (Exception e){
+            log.error(e);
+        }
+
     }
 
 }
