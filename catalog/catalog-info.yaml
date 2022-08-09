@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pcf-check
+  annotations:
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=pcf-check"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
