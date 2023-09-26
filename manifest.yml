@@ -4,6 +4,8 @@ applications:
   memory: 1GB
   instances: 1
   random-route: true
-  path: target/pcfcheck-0.0.1-SNAPSHOT.jar
+  path: target/pcfcheck-0.0.2-SNAPSHOT.jar
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
   buildpacks:
-    - java_buildpack_offline
+  - java_buildpack_offline
