@@ -22,7 +22,7 @@ public class VersionController {
 
     @RequestMapping("/java")
     public String indexJava(){
-        String ret = System.getProperty("java version");
+        String ret = System.getProperty("java.version");
         return ret;
     }
 }
