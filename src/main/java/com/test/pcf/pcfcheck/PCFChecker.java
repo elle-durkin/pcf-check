@@ -32,6 +32,7 @@ public class PCFChecker {
 		String s = "<table>";
 		s += infoEndpoints();
 		s += loggingEndpoints();
+		s += resourceEndpoints();
 		s += "</table>";
 
 		return s;
@@ -53,6 +54,7 @@ public class PCFChecker {
 		s += makeHTMLRow("seconds", "Write one message per second for 15 seconds");
 		s += makeHTMLRow("minute", "Write one message per second for 1 minute");
 		s += makeHTMLRow("hour", "Write one message per second for 1 hour");
+		s += makeHTMLRow("","");
 		return s;
 	}
 
